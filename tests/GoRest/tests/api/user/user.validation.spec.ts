@@ -15,14 +15,14 @@ test.describe('User API Validation', () => {
     const apiContext = await request.newContext({
       extraHTTPHeaders: {
         Authorization: `Bearer ${process.env.GOREST_TOKEN}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'User-Agent': 'Playwright-API-Tests'
+
       }
     });
 
     userService = new UserService(apiContext);
   });
-  console.log('CI TOKEN VALUE:', process.env.GOREST_TOKEN);
-  console.log('CI TOKEN LENGTH:', process.env.GOREST_TOKEN?.length);
 
   //------------POST------------
   test.describe('Required fields', () => {
