@@ -21,6 +21,9 @@ test.describe('User API Validation', () => {
 
     userService = new UserService(apiContext);
   });
+  console.log('CI TOKEN VALUE:', process.env.GOREST_TOKEN);
+  console.log('CI TOKEN LENGTH:', process.env.GOREST_TOKEN?.length);
+
   //------------POST------------
   test.describe('Required fields', () => {
     for (const tc of requiredCases) {
