@@ -18,10 +18,11 @@ export default defineConfig({
   timeout: 30000,
 
   retries: 0,
-  fullyParallel: true,
+   workers: 1,
+  fullyParallel: false,
 
   use: {
-    headless: false,
+    headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'on-first-retry',
