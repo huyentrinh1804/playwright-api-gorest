@@ -1,4 +1,4 @@
-import {CreateUserData} from '../../../../factories/user.factory';
+import {CreateUserData} from '../factories/user.factory';
 
 
 // empty fields cases data

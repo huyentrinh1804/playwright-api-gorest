@@ -1,6 +1,6 @@
 import { APIRequestContext} from "@playwright/test";
-import { UserData } from '../../GoRest/factories/user.factory';
-import { ENV } from '../../GoRest/config/env';
+import { UserData } from '../factories/user.factory';
+import { ENV } from '../config/env';
 
 export class UserService{
   constructor (private request : APIRequestContext){};

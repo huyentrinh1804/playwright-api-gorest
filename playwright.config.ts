@@ -18,7 +18,7 @@ export default defineConfig({
   timeout: 30000,
 
   retries: 0,
-   workers: 1,
+  workers: 1,
   fullyParallel: false,
 
   use: {

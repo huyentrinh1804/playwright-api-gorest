@@ -1,5 +1,5 @@
 import { expect } from 'playwright/test';
-import { CreateUserData} from '../../../../factories/user.factory';
+import { CreateUserData} from '../factories/user.factory';
 
 // Format fields data
 export const formatCases = [

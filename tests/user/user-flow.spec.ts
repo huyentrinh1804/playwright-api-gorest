@@ -4,8 +4,9 @@
  */
 
 import { test, expect, request } from '@playwright/test';
-import { CreateUserData } from '../../../factories/user.factory';
-import { UserService } from '../../../services/user.service';
+import { CreateUserData } from '../factories/user.factory';
+import { UserService } from '../services/user.service';
+import { ENV } from '../config/env';
 
 test.describe('User API happy path flow', () => {
   let userService: UserService;
@@ -14,9 +15,8 @@ test.describe('User API happy path flow', () => {
   test.beforeAll(async () => {
     const apiContext = await request.newContext({
       extraHTTPHeaders: {
-        Authorization: `Bearer ${process.env.GOREST_TOKEN}`,
+        Authorization: `Bearer ${ENV.TOKEN}`,
         'Content-Type': 'application/json',
-        'User-Agent': 'Playwright-API-Tests'
 
       }
     });

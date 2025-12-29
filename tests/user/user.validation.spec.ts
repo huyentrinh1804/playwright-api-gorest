@@ -1,10 +1,10 @@
 import {test, expect, request} from '@playwright/test';
-import { UserService } from '../../../services/user.service';
-import { requiredCases } from '../data/user/user.required.data';
-import { formatCases } from '../data/user/user.format.data';
-import { EmptyCases } from '../data/user/user.empty.data';
-import { businessCases } from '../data/user/user.business.data';
-
+import { UserService } from '../services/user.service';
+import { requiredCases } from '../data/user.required.data';
+import { formatCases } from '../data/user.format.data';
+import { EmptyCases } from '../data/user.empty.data';
+import { businessCases } from '../data/user.business.data';
+import { ENV } from '../config/env';
 
 
 test.describe('User API Validation', () => {
@@ -14,10 +14,8 @@ test.describe('User API Validation', () => {
   test.beforeAll(async () => {
     const apiContext = await request.newContext({
       extraHTTPHeaders: {
-        Authorization: `Bearer ${process.env.GOREST_TOKEN}`,
+        Authorization: `Bearer ${ENV.TOKEN}`,
         'Content-Type': 'application/json',
-        'User-Agent': 'Playwright-API-Tests'
-
       }
     });
 
